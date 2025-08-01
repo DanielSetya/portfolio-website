@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* Tambahan styling langsung di sini */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #222;
+      padding: 1rem 2rem;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main.projects {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    main.projects h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-category {
+      margin-bottom: 3rem;
+    }
+
+    .project-category h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #007BFF;
+      padding-left: 0.5rem;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Daniel Tarigan</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Proyek</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="projects">
+    <h2>My Projects</h2>
+
+    <section id="website" class="project-category">
+      <h3>Website Projects</h3>
+      <div class="project-gallery">
+        <img src="assets/projects/website/project1.png" alt="Website 1" />
+        <img src="assets/projects/website/project2.png" alt="Website 2" />
+        <img src="assets/projects/website/project3.png" alt="Website 3" />
+        <img src="assets/projects/website/project4.png" alt="Website 4" />
+        <img src="assets/projects/website/project5.png" alt="Website 5" />
+        <img src="assets/projects/website/project6.png" alt="Website 6" />
+        <img src="assets/projects/website/project7.png" alt="Website 7" />
+      </div>
+    </section>
+
+    <section id="iot" class="project-category">
+      <h3>IoT Projects</h3>
+      <div class="project-gallery">
+        <img src="assets/projects/iot/iot1.png" alt="IoT 1" />
+        <img src="assets/projects/iot/iot2.png" alt="IoT 2" />
+        <img src="assets/projects/iot/iot3.png" alt="IoT 3" />
+        <img src="assets/projects/iot/iot4.png" alt="IoT 4" />
+      </div>
+    </section>
+
+    <section id="mobile" class="project-category">
+      <h3>Mobile Apps</h3>
+      <div class="project-gallery">
+        <img src="assets/projects/mobile/app1.png" alt="App 1" />
+        <img src="assets/projects/mobile/app2.png" alt="App 2" />
+        <img src="assets/projects/mobile/app3.png" alt="App 3" />
+        <img src="assets/projects/mobile/app4.png" alt="App 4" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Daniel Setyanugraha Tarigan</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".project-gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    window.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daniel's Portfolio</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298); /* gradient biru elegan */
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    nav h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .projects-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    .card p {
+      color: #e0e0e0;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    @media (min-width: 768px) {
+      .projects-preview {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Daniel Tarigan</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Profil</a></li>
+        <li><a href="projects.html">Proyek</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <img src="assets/images/daniel.jpg" alt="Profile Picture" class="profile-image"/>
+    <h2>Hello, Saya Daniel Setyanugraha Tarigan!</h2>
+    <p>A passionate developer in IoT, Web, and Mobile App Development.</p>
+
+    <div class="projects-preview">
+      <a href="projects.html#iot" class="card-link">
+        <div class="card">
+          <h3>KucingFeeder IoT</h3>
+          <p>Proyek otomatisasi pemberian makan kucing menggunakan ESP32, load cell, RTC, dan Blynk.</p>
+        </div>
+      </a>
+
+      <a href="projects.html#web" class="card-link">
+        <div class="card">
+          <h3>Web Donasi Online</h3>
+          <p>Aplikasi donasi berbasis web menggunakan CodeIgniter, MySQL, dan dashboard admin.</p>
+        </div>
+      </a>
+
+      <a href="projects.html#mobile" class="card-link">
+        <div class="card">
+          <h3>Aplikasi Flutter Dasar</h3>
+          <p>CRUD aplikasi Flutter untuk manajemen buku/kategori dengan UI modern dan backend API.</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Daniel Setyanugraha Tarigan</p>
+  </footer>
+</body>
+</html>
